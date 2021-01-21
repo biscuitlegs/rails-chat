@@ -1,13 +1,23 @@
-<p class="title">Chat Room</p>
+<p class="title has-text-centered mt-3">Chat Room</p>
 
 <% if user_signed_in? %>
-    <%= render 'messages/form' %>
+    <div id="message-form" class="container box">
+        <%= render 'messages/form' %>
+    </div>
 <% else %>
-    <p class="notification is-info is-light">
-        Sign in to leave a message of your own.
-    </p>
+    <div class="container">
+        <p class="notification is-info is-light">
+            <a href="<%= new_user_session_path %>">Sign in</a> to connect to the live chat room and leave a message of your own.
+        </p>
+    </div>
 <% end %>
 
-<div id="messages-container">
-    <%= render @messages %>
+<div id="messages-container" class="container box mt-5">
+    <% if @messages.any? %>
+        <%= render @messages %>
+    <% else %>
+        <p id="no-messages-notification" class="notification is-primary is-light container">
+            Looks like there aren't any messages yet...
+        </p>
+    <% end %>
 </div>

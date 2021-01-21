@@ -1,14 +1,13 @@
-<p class="subtitle">New Message</p>
-
 <%= form_with model: @message do |form| %>
     <div class="field">
         <div class="control">
-            <%= form.text_area :body, class: "textarea" %>
+            <%= form.text_area :body, placeholder: "Type a message...", class: "textarea" %>
         </div>
     </div>
     <div class="field">
-        <div class="control">
-            <%= form.submit "Send", class: "button is-primary" %>
-        </div>
+        <%= form.button class: "button is-primary" do %>
+            <span>Send</span>
+            <span class="icon"><i class="fas fa-paper-plane"></i></span>
+        <% end %>
     </div>
 <% end %>

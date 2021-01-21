@@ -1,4 +1,8 @@
+<% if user_signed_in? && message.user.id == current_user.id %>
+<article class="message is-primary">
+<% else %>
 <article class="message is-dark">
+<% end %>
     <div class="message-header">
         <p><%= message.user.email %></p>
     </div>
