@@ -16,6 +16,11 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
+        <div class="navbar-item">
+          <% if user_signed_in? %>
+          <p>Signed in as <strong><%= current_user.email %></strong></p>
+          <% end %>
+        </div>
           <div class="navbar-item">
             <div class="buttons">
               <% if user_signed_in? %>

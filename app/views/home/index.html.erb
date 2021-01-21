@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p class="title">Chat Room</p>
+
+<% if user_signed_in? %>
+    <%= render 'messages/form' %>
+<% else %>
+    <p class="notification is-info is-light">
+        Sign in to leave a message of your own.
+    </p>
+<% end %>
+
+<div id="messages-container">
+    <%= render @messages %>
+</div>

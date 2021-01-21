@@ -1,0 +1,14 @@
+<p class="subtitle">New Message</p>
+
+<%= form_with model: @message do |form| %>
+    <div class="field">
+        <div class="control">
+            <%= form.text_area :body, class: "textarea" %>
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <%= form.submit "Send", class: "button is-primary" %>
+        </div>
+    </div>
+<% end %>
