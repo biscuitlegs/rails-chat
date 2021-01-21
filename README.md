@@ -1,24 +1,13 @@
-# README
+# Rails Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+* Group Chat App made with Rails.
+* Devise manages authentication of users.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How ActionCable is integrated
+* Uses ActionCable to integrate Websockets into the app.
+* Requires user sign in to authorize connection.
+* User is automatically subscribed to the `room` channel.
+* Messages are sent to the server-side `room` channel when a user creates one.
+* The message is rebroadcast to the client of all subscribed users of the `room` channel.
+* DOM manipulation is used to display the new message in the browser.
