@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <p class="title">Rails Chat</p>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button is-primary" %>
+              <% else %>
+                <%= link_to "Sign In", new_user_session_path, class: "button is-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
